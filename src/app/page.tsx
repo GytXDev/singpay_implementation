@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import {
   SingpayInitResponse,
@@ -10,6 +11,7 @@ import {
 } from "@/lib/singpay/types";
 
 export default function PaymentPage() {
+  const router = useRouter();
   const [numero, setNumero] = useState("");
   const [amount, setAmount] = useState("");
 
@@ -66,6 +68,7 @@ export default function PaymentPage() {
         } else if (isSuccess) {
           toast.success("Paiement effectué avec succès !", { id: toastId });
           setStatus("success");
+          router.push(`/success?amount=${amount}`);
         } else {
           // Statut intermédiaire : afficher et repoller
           toast.loading(`Statut Singpay : ${raw}`, { id: toastId });
