@@ -2,6 +2,7 @@
 
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Suspense } from 'react';
 
 function SuccessContent() {
@@ -35,6 +36,37 @@ function SuccessContent() {
       >
         Effectuer un nouveau paiement
       </Link>
+
+      <div className="flex flex-col items-center justify-center gap-3 pt-6 mt-8 border-t border-gray-50">
+        <div className="text-center">
+          <p className="text-xs text-gray-400 font-light mb-1">
+            Implémenté par{" "}
+            <span className="font-medium text-gray-500">
+              Japhet LEYALANGOYE
+            </span>
+          </p>
+          <p className="text-[11px] text-gray-400 font-light">
+            <Link
+              href="/contact"
+              className="text-gray-500 hover:text-gray-700 hover:underline transition-all">
+              Demander une documentation API accompagnée d’un guide
+            </Link>
+          </p>
+        </div>
+
+        <div className="flex items-center gap-2 mt-1 opacity-60 hover:opacity-100 transition-opacity">
+          <span className="text-[10px] text-gray-400 uppercase tracking-widest font-medium">
+            Agrégateur SINGPAY
+          </span>
+          <Image
+            src="/singpay.png"
+            alt="Singpay"
+            width={24}
+            height={24}
+            className="object-contain"
+          />
+        </div>
+      </div>
     </div>
   );
 }
