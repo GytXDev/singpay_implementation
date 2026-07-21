@@ -7,7 +7,7 @@ export const fetchCache = 'force-no-store';
 
 export async function GET(
   request: Request,
-  { params }: { params: { trans_id: string } }
+  { params }: { params: Promise<{ trans_id: string }> }
 ) {
   try {
     const { trans_id } = await params;
