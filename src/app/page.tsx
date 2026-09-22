@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import {
@@ -152,8 +151,8 @@ export default function PaymentPage() {
             Démo Paiement Mobile Money
           </h1>
           <p className="text-sm font-light text-gray-500 mt-2 leading-relaxed">
-            Saisissez vos informations pour procéder à un réel paiement sécurisé via
-            Airtel Money ou Moov Money.
+            Saisissez vos informations pour procéder à un réel paiement sécurisé
+            via Airtel Money ou Moov Money.
           </p>
         </div>
 
@@ -161,7 +160,8 @@ export default function PaymentPage() {
           <div>
             <label
               htmlFor="numero"
-              className="block text-sm font-medium text-gray-700 mb-2">
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Numéro de téléphone mobile money
             </label>
             <input
@@ -179,7 +179,8 @@ export default function PaymentPage() {
           <div>
             <label
               htmlFor="amount"
-              className="block text-sm font-medium text-gray-700 mb-2">
+              className="block text-sm font-medium text-gray-700 mb-2"
+            >
               Montant (FCFA)
             </label>
             <input
@@ -198,14 +199,16 @@ export default function PaymentPage() {
           <button
             type="submit"
             className="w-full flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white font-medium py-3.5 rounded-xl text-sm transition-all shadow-sm active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed disabled:active:scale-100 mt-2"
-            disabled={isBusy}>
+            disabled={isBusy}
+          >
             {isBusy ? (
               <>
                 <svg
                   className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
-                  viewBox="0 0 24 24">
+                  viewBox="0 0 24 24"
+                >
                   <circle
                     className="opacity-25"
                     cx="12"
@@ -241,13 +244,6 @@ export default function PaymentPage() {
                 <span className="font-medium text-gray-500">
                   Japhet LEYALANGOYE
                 </span>
-              </p>
-              <p className="text-[11px] text-gray-400 font-light">
-                <Link
-                  href="/contact"
-                  className="text-gray-500 hover:text-gray-700 hover:underline transition-all">
-                  Demander une documentation API accompagnée d’un guide
-                </Link>
               </p>
             </div>
 
